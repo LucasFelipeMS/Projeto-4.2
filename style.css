@@ -1,0 +1,168 @@
+/* ===================================
+   FINALIZAÇÃO E ACESSIBILIDADE
+=================================== */
+
+/* MENU MOBILE */
+
+.menu-mobile {
+    display: none;
+    background: var(--primaria);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 7px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* ALTO CONTRASTE */
+
+body.alto-contraste {
+    --fundo: #000000;
+    --texto: #ffffff;
+    --secundario: #ffffff;
+    --primaria: #ffff00;
+    --primaria-escura: #ffff00;
+    --cartao: #000000;
+    --borda: #ffffff;
+}
+
+body.alto-contraste .destaque,
+body.alto-contraste .etiqueta,
+body.alto-contraste .ler-mais {
+    color: #ffff00;
+}
+
+body.alto-contraste .botao-principal {
+    background: #ffff00;
+    color: #000000;
+}
+
+body.alto-contraste .hero {
+    background: #000000;
+}
+
+body.alto-contraste .conscientizacao {
+    background: #000000;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+}
+
+/* REFERÊNCIAS */
+
+.referencias {
+    padding: 80px 10%;
+    text-align: center;
+    background: var(--cartao);
+}
+
+.referencias h2 {
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+.referencias p {
+    color: var(--secundario);
+    margin-bottom: 30px;
+}
+
+.referencias-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 650px;
+    margin: auto;
+}
+
+.referencias-lista a {
+    text-decoration: none;
+    color: var(--primaria);
+    padding: 15px;
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.referencias-lista a:hover {
+    background: var(--fundo);
+    transform: translateX(5px);
+}
+
+/* MODAL */
+
+dialog {
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+dialog[open] {
+    animation: aparecer 0.25s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ROLAGEM */
+
+::selection {
+    background: var(--primaria);
+    color: white;
+}
+
+/* RESPONSIVIDADE FINAL */
+
+@media (max-width: 900px) {
+
+    .cabecalho {
+        position: sticky;
+        flex-wrap: wrap;
+    }
+
+    .menu-mobile {
+        display: block;
+    }
+
+    .cabecalho nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        order: 4;
+        padding: 15px;
+    }
+
+    .cabecalho nav.ativo {
+        display: flex;
+    }
+
+    .acessibilidade {
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .acessibilidade button {
+        padding: 7px 9px;
+    }
+
+    .referencias {
+        padding: 60px 7%;
+    }
+
+}
